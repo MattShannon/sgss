@@ -14,13 +14,19 @@ import os
 import sys
 import subprocess
 
+def getRawSubmitScript(binDir, gridName):
+    rawSubmitScript = os.path.join(binDir, 'raw-submit-%s.sh' % gridName)
+    if not os.path.exists(rawSubmitScript):
+        raise RuntimeError('raw submit script not found: %s' % rawSubmitScript)
+    return rawSubmitScript
+
 def rawSubmit(binDir, jobDir, gridName, inputJids):
     jobNameFile = os.path.join(jobDir, 'job_spec', 'name')
     with open(jobNameFile) as f:
         jobName = f.read().rstrip('\n')
 
     submitArgs = [
-        os.path.join(binDir, 'raw-submit-%s.sh' % gridName),
+        getRawSubmitScript(binDir, gridName),
         jobName,
         ','.join(inputJids),
         os.path.join(binDir, 'run_job.py'),
@@ -150,6 +156,10 @@ def main(argv):
     jobDirs = argv[2:]
 
     binDir = os.path.dirname(argv[0])
+
+    # check early that raw submit script exists
+    #   (gives more helpful error messages)
+    getRawSubmitScript(binDir, gridName)
 
     for jobDir in jobDirs:
         if isDone(jobDir) or hasBeenSubmitted(jobDir):
