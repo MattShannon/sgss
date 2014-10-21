@@ -41,12 +41,11 @@ License
 
 Please see the file ``License`` for details of the license and warranty for SGSS.
 
-Parts of the code in this directory are based on the following software packages:
-
 Installation
 ------------
 
-[SGSS](https://github.com/MattShannon/sgss) is hosted on github.
+The source code is hosted in the
+`SGSS github repository <https://github.com/MattShannon/sgss>`_.
 To obtain the latest source code using git::
 
     git clone git://github.com/MattShannon/sgss.git
@@ -58,17 +57,13 @@ SGSS has the following dependencies:
 To set-up this directory:
 
 - add raw submission scripts named ``raw-submit-<GRIDNAME>.sh`` for any grids
-  you wish to be able to submit to, e.g. ``raw-submit-divf.sh`` would for
-  submission to a grid named ``divf``.
+  you wish to be able to submit to, e.g. ``raw-submit-divf.sh`` for submission
+  to a grid named ``divf``.
   Examples of raw submission scripts can be found in the ``examples``
   subdirectory.
 
 The scripts in this directory can then be called directly; there is no need to
 "install" them as such.
-
-Examples
---------
-
 
 More details
 ------------
