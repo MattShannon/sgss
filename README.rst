@@ -1,13 +1,12 @@
 Simple grid submission system (SGSS)
 ====================================
 
-This software is designed to manage dependencies of "grid jobs", that is jobs
-which will be submitted to a compute grid.
-It provides a simple set of scripts to create jobs and to submit them to the
-grid.
-It is aware of the dependencies between jobs and provides a basic caching
-mechanism to ensure that jobs are not run unnecessarily, but otherwise tries to
-be as unobtrusive as possible.
+This software is designed to manage "grid jobs", that is jobs which will be
+submitted to a compute grid.
+It provides a simple set of scripts to create jobs and to submit them to a
+grid while managing the dependencies between jobs.
+It provides a basic caching mechanism to ensure that jobs are not run
+unnecessarily, but otherwise tries to be as unobtrusive as possible.
 Its goal is to make submitting a graph of grid jobs a highly automated process,
 while allowing substantial manual intervention when desired.
 
