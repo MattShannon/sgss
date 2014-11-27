@@ -84,7 +84,6 @@ Bugs
 Please use the `issue tracker <https://github.com/MattShannon/sgss/issues>`_
 to submit bug reports.
 
-
 Contact
 -------
 
