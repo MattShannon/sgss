@@ -130,7 +130,10 @@ def main(argv):
                 jobDir = cmdArg
         cmdArgs.append(cmdArg)
 
+    jobName = os.path.basename(jobName)
+
     assert jobName is not None
+    assert os.path.sep not in jobName
     assert jobDir is not None
 
     jobSubDirs = [
